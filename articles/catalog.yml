@@ -2,10 +2,12 @@ PREDEF:
   - preface.re
 
 CHAPS:
-
+  - create_library.re
+  - upload_bintray.re
+  - publish_jcenter.re
 
 APPENDIX:
 
 
 POSTDEF:
-
+  - afterword.re
