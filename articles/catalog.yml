@@ -8,7 +8,7 @@ CHAPS:
   - publish_jcenter.re
 
 APPENDIX:
-
+  - deploygradle-all.re
 
 POSTDEF:
   - afterword.re
