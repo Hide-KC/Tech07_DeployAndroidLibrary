@@ -125,12 +125,12 @@ dokka {
 }
 
 task sourcesJar(type: Jar) {
-  classifier = 'sources'
+  archiveClassifier = 'sources'
   from android.sourceSets.main.java.srcDirs
 }
 
 task javadocJar(type: Jar, dependsOn: dokka) {
-  classifier = 'javadoc'
+  archiveClassifier = 'javadoc'
   from "$buildDir/javadoc"
 }
 //}

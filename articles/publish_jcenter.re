@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'work.kcs_labo:helloworldlibrary:0.0.1'
+  implementation 'work.kcs_labo:helloworld:0.0.1'
 }
 //}
 
@@ -78,9 +78,9 @@ repositories {
 }
 
 dependencies {
-  implementation 'work.kcs_labo:helloworldlibrary:0.0.1@aar'
+  implementation 'work.kcs_labo:helloworld:0.0.1'
 }
 //}
 
-テスト等で HelloWorldCore クラスが参照できれば完了です。
+ユニットテスト等で HelloWorldCore クラスが参照できれば完了です。
 お疲れさまでした。
