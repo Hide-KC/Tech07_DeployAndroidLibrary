@@ -23,7 +23,7 @@ class HelloWorldCore {
 
 まずはいつもどおりの手順で Android プロジェクトを作成します。
 最初の Activity の選択は "Add no Activity" でもなんでも結構です。
-ここではプロジェクトの名称を "HelloWorldLibrary" としましょう。
+ここではプロジェクトの名称を "HelloWorldLibrary" としました。
 
 //image[select_activity][New Project][scale=0.64]{
 //}
@@ -89,7 +89,6 @@ class HelloWorldCore {
 //listnum[project_build.gradle][クラスパスの追加]{
 dependencies {
   classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-  classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
   classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18'
 }
 //}
@@ -173,7 +172,7 @@ project.afterEvaluate {
         pom.withXml {
           def root = asNode()
           root.appendNode('description', libDescription)
-          root.appendNode('name', libName)
+          root.appendNode('name', pkgName)
           root.appendNode('url', siteUrl)
           root.children().last() + pomConfig
 
@@ -202,7 +201,7 @@ project.afterEvaluate {
 }
 //}
 
-pom.withXml クロージャにおいて asNode メソッドを使用することにより、groovy.util.Node 形式で取得できます。
+pom.withXml において asNode メソッドを使用することにより、pom の中身を groovy.util.Node 形式で取得できます。
 取得したオブジェクトに対し、appendNode メソッドで必要な要素を追加していきます。
 
 ここでひとつ注意したいのが、依存関係は明示的に記述しないと出力されない点です。

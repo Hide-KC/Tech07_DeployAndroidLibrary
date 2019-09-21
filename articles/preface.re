@@ -11,7 +11,7 @@
 == 本書の内容
 
  1. Android Studio でライブラリを作る
- 1. Gradle で Bintray の maven リポジトリにアップロードする
+ 1. Gradle で Bintray の Maven リポジトリにアップロードする
  1. JCenter にライブラリを公開する
 
 == 本書の環境
@@ -19,6 +19,7 @@
  * Windows 10 Pro
  * Android Studio 3.5
  * Gradle 5.4.1
+ ** Gradle Wrapper を使うので個別にインストールは不要です
  * Kotlin 1.3.21
 
 == 免責事項
@@ -35,3 +36,11 @@
 本書に掲載されているあらゆる内容の著作権は著者に帰属しており、
 他のホームページ・ブログ・SNS等に無断で転載・転用することを禁止します。
 引用する場合は、タイトルおよび著者等を明示して本書からの引用であることを明らかにしてください。
+
+== 参考サイト
+
+ * Bintray https://bintray.com/
+ * Maven Publish Plugin https://docs.gradle.org/current/userguide/publishing_maven.html
+ * bintray plugin https://github.com/bintray/gradle-bintray-plugin
+ * dokka plubin https://github.com/Kotlin/dokka
+ * 執筆者の Bintray アカウント https://bintray.com/hide-kc

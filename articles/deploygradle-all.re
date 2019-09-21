@@ -6,10 +6,10 @@ apply plugin: 'org.jetbrains.dokka-android'
 apply plugin: 'com.jfrog.bintray'
 
 ext {
-  libArtifactId = "helloworldlibrary"
   libGroupId = "work.kcs_labo"
+  libArtifactId = project.name //モジュール名（project.name）を指定
   libVersion = "0.0.1"
-  libName = 'HelloWorldLibrary'
+  pkgName = 'HelloWorldLibrary'
   libDescription = 'Android sample library for Tech07.'
   devId = 'hide-kc'
   devName = 'KC'
@@ -18,9 +18,6 @@ ext {
   licenseUrl = 'https://opensource.org/licenses/mit-license.php'
   siteUrl = 'https://github.com/Hide-KC/HelloWorldLibrary'
 }
-
-// This is the library version used when deploying the artifact
-project.version = libVersion
 
 dokka {
   outputFormat = 'html'
@@ -80,12 +77,12 @@ project.afterEvaluate {
         pom.withXml {
           def root = asNode()
           root.appendNode('description', libDescription)
-          root.appendNode('name', libName)
+          root.appendNode('name', pkgName)
           root.appendNode('url', siteUrl)
           root.children().last() + pomConfig
 
-          def dependenciesNode = asNode().getAt('dependencies')[0] ?:
-                                   asNode().appendNode('dependencies')
+          def dependenciesNode = root['dependencies'][0] ?:
+                                   root.appendNode('dependencies')
           configurations.implementation.allDependencies.each {
             // Ensure dependencies such as fileTree are not included.
             if (it.name != 'unspecified') {
@@ -115,13 +112,13 @@ bintray {
 
   pkg {
     repo = 'maven'
-    name = libName
+    name = pkgName
     desc = libDescription
     publish = true
     override = true
-    userOrg = devId
     licenses = [licenseName]
     vcsUrl = siteUrl + '.git'
+    publicDownloadNumbers = true
     version {
       name = libVersion
     }

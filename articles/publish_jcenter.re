@@ -27,13 +27,13 @@ bintray {
   //リモート Maven リポジトリに追加するパッケージの設定
   pkg {
     repo = 'maven'
-    name = libName
+    name = pkgName
     desc = libDescription
     publish = true
     override = true
-    userOrg = devId
     licenses = [licenseName]
     vcsUrl = siteUrl + '.git'
+    publicDownloadNumbers = true
     version {
       name = libVersion
     }
@@ -78,7 +78,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'work.kcs_labo:helloworldlibrary:0.0.1'
+  implementation 'work.kcs_labo:helloworldlibrary:0.0.1@aar'
 }
 //}
 

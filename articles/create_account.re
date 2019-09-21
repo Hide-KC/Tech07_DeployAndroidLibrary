@@ -1,7 +1,8 @@
 = Bintray への登録と API キーの取得
 
-作成したライブラリの公開のため、ホスティングサービスの Bintray@<fn>{bintray} を利用します。
-Bintray は OSS 専用のアカウントであれば無料で利用することができます。
+ではさっそく Android プロジェクトの作成から……と行きたいところですが、先にライブラリを公開するためのホスティングサービスのアカウントを取得しておきましょう。
+最終的に JCenter リポジトリに登録するため、ホスティングサービスの Bintray@<fn>{bintray} を利用します。
+Bintray は OSS 専用のアカウントであれば無料で使うことができます。
 
 //footnote[bintray][Bintray https://bintray.com/]
 
