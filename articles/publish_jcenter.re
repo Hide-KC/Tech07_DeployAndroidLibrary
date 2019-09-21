@@ -82,5 +82,5 @@ dependencies {
 }
 //}
 
-ユニットテスト等で HelloWorldCore クラスが参照できれば完了です。
+テスト等で HelloWorldCore クラスが参照できれば完了です。
 お疲れさまでした。
